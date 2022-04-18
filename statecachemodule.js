@@ -15,7 +15,7 @@ olog = function(obj) {
   return log("\n" + toJson(obj));
 };
 
-import * as store from "./statesavermodule";
+import * as store from "./statesavermodule.js";
 
 //###########################################################
 jsonCache = {};
@@ -232,7 +232,7 @@ export var logCacheState = function() {
   var entry, logString;
   logString = "cacheState:\n";
   if (cacheHeadEntry != null) {
-    logString += "cacheHead Id: " + cacheHeadEntry.id;
+    logString += "cacheHead Id: " + cacheHeadEntry.id + "\n";
     logString += cacheHeadEntry.toString();
     entry = cacheHeadEntry.previousEntry;
     while ((entry != null)) {
@@ -247,7 +247,7 @@ export var logCacheState = function() {
   logString += "- - - - -\n";
   // logString += toJson({jsonCache})
   logString += toJson({cacheSize, maxCacheSize});
-  return log(logString);
+  return log(logString + "\n");
 };
 
 //endregion
